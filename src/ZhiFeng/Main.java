@@ -6,24 +6,27 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        int min = 1, max = 100, guess = (min+max)/2;
+        int min = 1, max = 100, guess;
         Scanner reply = new Scanner(System.in);
-        System.out.println("Hello I am a geinuscreated by the greatest scientists in the world and I am here to guess your number from 1 - 100, tell me if it's higher or lower(Lowercase Only)");
-        System.out.println("Is your number "+ guess);
-        while(!(reply.nextLine().equals("yes"))){
-            if(reply.equals("higher")){
+        System.out.println("Think of a number and i will try to guess it. Tell me if it is higher or lower.");
+        String replyS = "";
+        while(!(replyS.equals("yes"))){
+            guess = (min + max)/2;
+            System.out.println("Is your number: "+ guess);
+            replyS = reply.nextLine();
+            if(replyS.equals("higher")){
                 min = guess;
             }
             else{
-                if (reply.nextLine().equals("lower")) {
+                if (replyS.equals("lower")) {
                     max = guess;
                 }
                 else{
-                    System.out.println("Invalid answer. higher or lower?");
+                    if(!(replyS.equals("yes"))){
+                        System.out.println("Invalid response. higher or lower?");
+                    }
                 }
             }
-            guess = (min + max)/2;
-            System.out.println("Is your number: "+ guess);
         }
         System.out.println("Yay I got the answer.");
     }
