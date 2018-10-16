@@ -29,4 +29,17 @@ public class ZFengLib {
         System.out.println("Yay I got the answer.");
         return AItalk;
     }
+
+    public static int num(int numb){
+        System.out.println("Hello, I am thinking of a nmber from 1 - 20, can you guess it?");
+        Scanner numguess = new Scanner(System.in);
+        int guess = 1;
+        while(numguess.nextInt() != numb){
+            System.out.println("Wrong Guess, Try again.");
+            guess++;
+        }
+        System.out.println("You got it, the number was: " + numb);
+        System.out.println("It only took you " + guess + " guesses");
+        return numb;
+    }
 }
